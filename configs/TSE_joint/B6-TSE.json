@@ -1,0 +1,94 @@
+{
+    "pl_module": "src.pl_modules.ts_hear_binaural_TSE_pl_module.TSHearPLModule",
+    "pl_module_args": {
+        "sr": 16000,
+        "scheduler": "torch.optim.lr_scheduler.ReduceLROnPlateau",
+        "scheduler_params": {
+            "mode": "max",
+            "patience": 4,
+            "factor": 0.5,
+            "min_lr": 1e-06
+        },
+        "optimizer": "torch.optim.Adam",
+        "optimizer_params": {
+            "lr": 0.001
+        },
+        "small_model": "src.models.tfgridnet_TSE_causal_torch_stft_layernorm.net.Net",
+        "small_model_params": {
+            "stft_chunk_size": 128,
+            "stft_pad_size": 64,
+            "num_ch": 2,
+            "D": 16,
+            "L": 4,
+            "I": 1,
+            "J": 1,
+            "B": 3,
+            "H": 16,
+            "use_attn": false,
+            "lookahead": true,
+            "local_atten_len": 50,
+            "generate_embeddings": false,
+            "use_alignment": true,
+            "use_cross_attention": true,
+            "delay": 6
+        },
+        "big_model": "src.models.tfgridnet_TSE_causal_torch_stft_layernorm.net.Net",
+        "big_model_params": {
+            "stft_chunk_size": 128,
+            "stft_pad_size": 64,
+            "num_ch": 2,
+            "D": 64,
+            "L": 8,
+            "I": 1,
+            "J": 1,
+            "B": 3,
+            "H": 64,
+            "use_attn": true,
+            "lookahead": true,
+            "local_atten_len": 50,
+            "generate_embeddings": true,
+            "use_masked_attention": true
+        },
+        "big_model_init_ckpt": "",
+        "joint_model": "src.models.joint-model.net.JointModel",
+        "joint_model_params": {
+            "compression": 1,
+            "delay": 6
+        },
+        "freeze_bm": false,
+        "loss_params": {
+            "name": "sisdr"
+        }
+    },
+    "pl_logger": "src.pl_modules.ts_hear_binaural_TSE_pl_module.TSHearLogger",
+    "val_logger": "src.pl_modules.ts_hear_binaural_TSE_pl_module.ValHistLogger",
+    "epochs": 20,
+    "batch_size": 8,
+    "eval_batch_size": 8,
+    "num_workers": 16,
+    "grad_clip": 1,
+    "train_dataset": "src.datasets.BakedTSE_dataset.BakedTSE_dataset",
+    "train_data_args": {
+        "sr": 16000,
+        "resample_rate": null,
+        "dset": "train",
+        "mixtures_dir": "/data/new_TSE_100k",
+        "num_samples": 100000
+    },
+    "val_dataset": "src.datasets.BakedTSE_dataset.BakedTSE_dataset",
+    "val_data_args": {
+        "sr": 16000,
+        "resample_rate": null,
+        "dset": "val",
+        "mixtures_dir": "/data/new_TSE_100k",
+        "num_samples": 5000
+    },
+    "test_dataset": "src.datasets.BakedTSE_dataset.BakedTSE_dataset",
+    "test_data_args": {
+        "sr": 16000,
+        "resample_rate": null,
+        "dset": "test",
+        "mixtures_dir": "/data/new_TSE_100k",
+        "num_samples": 5000
+    }
+}
