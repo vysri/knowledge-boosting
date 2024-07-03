@@ -25,10 +25,10 @@ The TF-GridNet model is used to demonstrate results and is the model documented 
 ### Dataset
 
 We use Zenodo to host our datasets. You can access the different datasets below (download both part 1 and 2 for a specific dataset). Each dataset contains a train, validation, and test partition.
-* [Target Speech Extraction Part 1](https://zenodo.org/records/12575452)
-* [Target Speech Extraction Part 2](https://zenodo.org/records/12629275)
-* [Source Separation Part 1](https://zenodo.org/records/12629604)
-* [Source Separation Part 2](https://zenodo.org/records/12629652)
+* [Target Speech Extraction (TSE) Part 1](https://zenodo.org/records/12575452)
+* [Target Speech Extraction (TSE) Part 2](https://zenodo.org/records/12629275)
+* [Source Separation (SS) Part 1](https://zenodo.org/records/12629604)
+* [Source Separation (SS) Part 2](https://zenodo.org/records/12629652)
 
 Create the `data` directory and untar the data from Zenodo. This example is for target speaker extraction. Replace 'tse' with 'ss' below for source separation:
 
@@ -49,6 +49,9 @@ Untar the datasets from Zenodo into data directory
     cd ..
 
 ### Training
+You can run either the baseline models (train large and small models separately before joint training) or run joing configurations. These configurations are under `configs/baselines` and `configs/TSE_joint` or `configs/SS_joint` depending on the task. 
+
+Note that in the joint configurations specifically, you will need to specify the `big_model_init_ckpt` argument which is a PyTorch (.pt) model checkpoint. You may generate your own through training the baseline configurations provided or refer to our model checkpoints ([TSE](https://drive.google.com/file/d/11K71ElmRia_isGCFR8HLpHK9bqw-Q372/view?usp=drive_link), [SS](https://drive.google.com/file/d/1sJIH8MAvCjPKuQBcsjmenTPPGCgiSvS8/view?usp=drive_link)).
 
     # Usage: trainer.py [-h] --config CONFIG --run_dir RUN_DIR [--resume] [--ckpt CKPT] [--test]
     python -m src.trainer --run_dir <NAME OF DIR TO LOG RUNS> --config <configs/PATH TO CONFIG.json>
