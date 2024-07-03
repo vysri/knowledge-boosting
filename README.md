@@ -40,7 +40,7 @@ Download all tarballs from the datasets specified above.
     # Assemble the train dataset tarball
     cat kb-tse-dataset-train-part*.tar > /scr/kb-tse-dataset-train.tar
         
-Untar the datasets from Zenodo into data directory
+Untar the datasets from Zenodo into `data` directory.
         
     cd data
     tar -xvf kb-tse-dataset-train.tar -C .
