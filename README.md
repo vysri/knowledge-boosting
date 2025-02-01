@@ -60,7 +60,7 @@ Note that in the joint configurations specifically, you will need to specify the
 
     @misc{srinivas2024knowledgeboosting,
       title={Knowledge boosting during low-latency inference}, 
-      author={Vidya Srinivas and Malek Itani and Tuochao Chen and Emre Sefik Eskimez and Takuya Yoshioka and Shyamnath Gollakota},
+      author={Vidya Srinivas and Malek Itani and Tuochao Chen and Sefik Emre Eskimez and Takuya Yoshioka and Shyamnath Gollakota},
       year={2024},
       eprint={2407.11055},
       archivePrefix={arXiv},
