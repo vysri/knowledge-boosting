@@ -10,7 +10,7 @@ from torch.nn.parameter import Parameter
 
 import math
 
-from src.new_models.common.LayerNorms import LayerNormalization4DCF
+from src.models.common.LayerNorms import LayerNormalization4DCF
 
 
 class GridNetBlock(nn.Module):

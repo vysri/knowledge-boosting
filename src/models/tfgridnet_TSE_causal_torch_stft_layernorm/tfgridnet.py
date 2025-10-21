@@ -7,8 +7,8 @@ import torch.nn as nn
 
 from espnet2.enh.separator.abs_separator import AbsSeparator
 
-from src.new_models.common.GridNetBlock import GridNetBlock
-from src.new_models.common.merging import FilmLayer, CrossAtten_Layer
+from src.models.common.GridNetBlock import GridNetBlock
+from src.models.common.merging import FilmLayer, CrossAtten_Layer
 
 
 class TSELayer(nn.Module):

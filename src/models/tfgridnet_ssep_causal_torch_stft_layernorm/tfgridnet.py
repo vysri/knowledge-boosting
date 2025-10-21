@@ -12,8 +12,8 @@ from espnet2.enh.separator.abs_separator import AbsSeparator
 from espnet2.torch_utils.get_layer_from_string import get_layer
 
 
-from src.new_models.common.GridNetBlock import GridNetBlock
-from src.new_models.common.merging import FilmLayer, CrossAtten_Layer
+from src.models.common.GridNetBlock import GridNetBlock
+from src.models.common.merging import FilmLayer, CrossAtten_Layer
 
 class LayerNormPermuted(nn.LayerNorm):
     def __init__(self, *args, **kwargs):

@@ -3,7 +3,7 @@ import torch.nn as nn
 from espnet2.torch_utils.get_layer_from_string import get_layer
 import math
 
-from src.new_models.common.LayerNorms import LayerNormalization4DCF_new
+from src.models.common.LayerNorms import LayerNormalization4DCF_new
 
 import torch.nn.functional as F
 
