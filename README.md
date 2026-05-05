@@ -57,7 +57,7 @@ Note that in the joint configurations specifically, you will need to specify the
     python -m src.trainer --run_dir <NAME OF DIR TO LOG RUNS> --config <configs/PATH TO CONFIG.json>
 
 ## Citation
-
+```
 @inproceedings{srinivas-knowledgeboosting,
   title     = {Knowledge boosting during low-latency inference},
   author    = {Vidya Srinivas and Malek Itani and Tuochao Chen and Sefik Emre Eskimez and Takuya Yoshioka and Shyamnath Gollakota},
@@ -67,3 +67,4 @@ Note that in the joint configurations specifically, you will need to specify the
   doi       = {10.21437/Interspeech.2024-331},
   issn      = {2958-1796},
 }
+```
